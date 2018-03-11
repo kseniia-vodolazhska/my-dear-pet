@@ -14,7 +14,7 @@ namespace MyDearPet.Data.EF.EntityConfigurations
             builder.Property(p => p.Gender).IsRequired();
             builder.Property(p => p.DateOfBirth).IsRequired();
             builder.HasOne(p => p.Curator);
-            builder.HasOne(p => p.Shelter);
+            builder.HasOne(p => p.Shelter).WithMany().OnDelete(DeleteBehavior.Restrict);
             builder.HasMany(p => p.Media);
         }
     }
