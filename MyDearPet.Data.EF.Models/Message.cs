@@ -12,8 +12,8 @@ namespace MyDearPet.Data.EF.Models
 
         public DateTime MessageDate { get; set; }
 
-        public User Sender { get; set; }
+        public virtual User Sender { get; set; }
 
-        public User Recepient { get; set; }
+        public virtual User Recepient { get; set; }
     }
 }
