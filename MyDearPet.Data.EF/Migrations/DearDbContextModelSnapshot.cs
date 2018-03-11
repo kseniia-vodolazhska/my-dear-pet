@@ -211,12 +211,12 @@ namespace MyDearPet.Data.EF.Migrations
                     b.HasOne("MyDearPet.Data.EF.Models.User", "Recepient")
                         .WithMany()
                         .HasForeignKey("RecepientId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("MyDearPet.Data.EF.Models.User", "Sender")
                         .WithMany()
                         .HasForeignKey("SenderId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("MyDearPet.Data.EF.Models.Pet", b =>
@@ -229,7 +229,7 @@ namespace MyDearPet.Data.EF.Migrations
                     b.HasOne("MyDearPet.Data.EF.Models.Shelter", "Shelter")
                         .WithMany()
                         .HasForeignKey("ShelterId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Restrict);
                 });
 
             modelBuilder.Entity("MyDearPet.Data.EF.Models.Shelter", b =>

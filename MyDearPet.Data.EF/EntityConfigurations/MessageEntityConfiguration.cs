@@ -11,8 +11,8 @@ namespace MyDearPet.Data.EF.EntityConfigurations
             builder.HasKey(m => m.Id);
             builder.Property(m => m.Id).ValueGeneratedOnAdd();
             builder.Property(m => m.Text).HasMaxLength(200).IsRequired();
-            builder.HasOne(m => m.Sender);
-            builder.HasOne(m => m.Recepient);
+            builder.HasOne(m => m.Sender).WithMany().OnDelete(DeleteBehavior.Restrict);
+            builder.HasOne(m => m.Recepient).WithMany().OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
